@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Land Chain</title>
+  <title>VLC</title>
 
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -24,11 +24,11 @@
       <ul class="nav sidebar-nav">
         <li class="sidebar-brand">
           <a href="#">
-            Land Chain
+            VLC
           </a>
         </li>
         <li>
-          <a href="#" id="nav-1">See All Lands</a>
+          <a href="#" id="nav-1">See Status</a>
         </li>
         <li>
           <a href="#" id="nav-2">Approve</a>
@@ -38,6 +38,12 @@
         </li>
         <li>
           <a href="#" id="nav-4">Transfer</a>
+        </li>
+        <li>
+            <a href="#" id="nav-5">Add Vehicle</a>
+        </li>
+        <li>
+            <a href="#" id="nav-6">Register Event</a>
         </li>
 
         <li>
@@ -55,9 +61,9 @@
       <div class="container welcome">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2">
-            <h1>Welcome To
-              <span class="landchain"> Land Chain </span>App</h1>
-            <h2>Check the menu to see What you can do With Land Chain</h2>
+            <h1>Welcome To <br>
+              <span class="landchain"> Vehicle Lifecycle Chain </span></h1>
+            <h2>Check the menu to see What you can do With Vehicle Lifecycle Chain</h2>
           </div>
         </div>
         <img src="http://antimatterdesign.com/wp-content/uploads/2015/10/Ethereumpic11.jpg" alt="" id="hero">
@@ -69,9 +75,16 @@
 
   <div class="container">
     <div id="content-1" class="fadeIn">
-      <button class="btn btn-primary total-count mt-5">total count of lands</button>
-      <ul class="lands">
-      </ul>
+        <div class="mm-5">
+            <h1>Check Vehicle Status</h1>
+            <div class="form-group">
+              <!-- <label for="transfer-from">Vehicle Number</label> -->
+              <input type="text" class="form-control" id="see-status" placeholder="Vehicle Number">
+            </div>
+            <button class="btn btn-primary total-count mt-5">check Vehicle Status</button>
+            <!-- <ul class="lands">
+            </ul> -->
+        </div>
     </div>
     <div id="content-2" class="fadeIn ">
 
@@ -190,7 +203,7 @@
       <hr>
 
       <div class="mm-5">
-        <h3>Transfer Ownership of a land from someone to someone else with safe Transfer</h3>
+        <h3>Add New Vehicle</h3>
         <div class="form-group">
           <label for="safe-transfer-from">who is the old owner of the land</label>
           <input type="text" class="form-control" id="safe-transfer-from" placeholder="public key of the old owner">
@@ -208,6 +221,53 @@
         </button>
       </div>
       <hr>
+    </div>
+    <div id="content-5" class="fadeIn">
+        <div class="mm-5">
+          <h3>Transfer Ownership of a land from someone to someone else</h3>
+          <div class="form-group">
+            <label for="transfer-from">who is the old owner of the land</label>
+            <input type="text" class="form-control" id="transfer-from" placeholder="public key of the old owner">
+          </div>
+          <div class="form-group">
+            <label for="transfer-to">who is the new owner of the land</label>
+            <input type="text" class="form-control" id="transfer-to" placeholder="public key of the new owner">
+          </div>
+          <div class="form-group">
+            <label for="transfer-id">enter the land id to change it's owner</label>
+            <input type="text" class="form-control" id="transfer-id" placeholder="land ID">
+          </div>
+          <button class="btn btn-primary transfer-btn">
+            Transfer Ownership
+          </button>
+        </div>
+        <hr>
+    </div>
+    <div id="content-6" class="fadeIn">
+        <div class="mm-5">
+          <h1>Register A New Event</h1>
+          <div class="form-group">
+            <label for="transfer-from">Vehicle Number</label>
+            <input type="text" class="form-control" id="vehicle-number" placeholder="Vehicle Number">
+          </div>
+          <div class="form-group">
+            <label for="transfer-to">Event Type</label>
+            <select class="form-control" id="event-type" style="background-color: #ffffff">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="transfer-id">Event Description</label>
+            <input type="text" class="form-control" id="event-description" placeholder="Event Description">
+          </div>
+          <button class="btn btn-primary transfer-btn">
+            Add New Event
+          </button>
+        </div>
+        <hr>
     </div>
 
   </div>

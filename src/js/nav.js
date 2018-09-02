@@ -6,10 +6,14 @@ $(document).ready(function () {
     nav2 = $('#nav-2'),
     nav3 = $('#nav-3'),
     nav4 = $('#nav-4'),
+    nav5 = $('#nav-5'),
+    nav6 = $('#nav-6'),
     content1 = $('#content-1'),
     content2 = $('#content-2'),
     content3 = $('#content-3'),
     content4 = $('#content-4'),
+    content5 = $('#content-5'),
+    content6 = $('#content-6'),
     welcome = $('.welcome');
 
   let current = welcome;
@@ -65,6 +69,18 @@ $(document).ready(function () {
     content4.show();
     current = content4;
 
+  });
+
+  nav5.click(() => {
+    current.hide();
+    content5.show();
+    current = content5;
+  });
+
+  nav6.click(() => {
+    current.hide();
+    content6.show();
+    current = content6;
   });
 
 
