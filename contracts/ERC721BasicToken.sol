@@ -32,6 +32,8 @@ contract ERC721BasicToken is SupportsInterfaceWithLookup, ERC721Basic {
   // Mapping from owner to operator approvals
   mapping (address => mapping (address => bool)) internal operatorApprovals;
 
+  mapping(uint => mapping(string => string{})) tokenStatus;
+
   constructor()
     public
   {
@@ -173,6 +175,10 @@ contract ERC721BasicToken is SupportsInterfaceWithLookup, ERC721Basic {
   {
     // solium-disable-next-line arg-overflow
     safeTransferFrom(_from, _to, _tokenId, "");
+  }
+
+  function seeStatus(uint256 _tokenId) returns (bool){
+    return true;
   }
 
   /**

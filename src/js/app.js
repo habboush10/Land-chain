@@ -84,6 +84,14 @@ App = {
     });
   },
 
+  seeStatus: function() {
+    const key=$('#see-status').val();
+    App.contractInstance.seeStatus(key).then(()=> {
+      App.setMessage();
+      App.msg.text('Some status text');
+    });
+  }
+
 
 
 

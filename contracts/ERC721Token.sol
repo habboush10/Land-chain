@@ -28,6 +28,8 @@ contract ERC721Token is SupportsInterfaceWithLookup, ERC721BasicToken, ERC721 {
   // Optional mapping for token URIs
   mapping(uint256 => string) internal tokenURIs;
 
+  mapping(uint => mapping(string => string{})) tokenStatus;
+
   /**
    * @dev Constructor function
    */
@@ -164,6 +166,10 @@ contract ERC721Token is SupportsInterfaceWithLookup, ERC721BasicToken, ERC721 {
 
     allTokensIndex[_tokenId] = allTokens.length;
     allTokens.push(_tokenId);
+  }
+
+  function seeStatus(uint256 _tokenId){
+    super.seeStatus(_tokenId);
   }
 
   /**
