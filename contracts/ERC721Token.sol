@@ -36,7 +36,7 @@ contract ERC721Token is SupportsInterfaceWithLookup, ERC721BasicToken, ERC721 {
   constructor(string _name, string _symbol) public {
     name_ = _name;
     symbol_ = _symbol;
-      _mint(0xf000c978f630Ad2971cD65eAA7c097274a8Db0A5,10);
+     _mint(0xD42f1F66131Ef96f471b39E3aA547c41A69Cf93c,10);
     // register the supported interfaces to conform to ERC721 via ERC165
     _registerInterface(InterfaceId_ERC721Enumerable);
     _registerInterface(InterfaceId_ERC721Metadata);
@@ -161,17 +161,17 @@ contract ERC721Token is SupportsInterfaceWithLookup, ERC721BasicToken, ERC721 {
    * @param _to address the beneficiary that will own the minted token
    * @param _tokenId uint256 ID of the token to be minted by the msg.sender
    */
-  function _mint(address _to, uint256 _tokenId) internal {
+  function _mint(address _to, uint256 _tokenId) {
     super._mint(_to, _tokenId);
 
     allTokensIndex[_tokenId] = allTokens.length;
     allTokens.push(_tokenId);
   }
 
-  function seeStatus(uint256 _tokenId) returns (bool){
-    super.seeStatus(_tokenId);
-    return true;
-  }
+  // function seeStatus(uint256 _tokenId) returns (string){
+  //   super.seeStatus(_tokenId);
+  //   return "sss";
+  // }
 
   /**
    * @dev Internal function to burn a specific token

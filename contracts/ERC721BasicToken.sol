@@ -38,6 +38,7 @@ contract ERC721BasicToken is SupportsInterfaceWithLookup, ERC721Basic {
     public
   {
     // register the supported interfaces to conform to ERC721 via ERC165
+    // _mint(0xD42f1F66131Ef96f471b39E3aA547c41A69Cf93c,10);
     _registerInterface(InterfaceId_ERC721);
     _registerInterface(InterfaceId_ERC721Exists);
   }
@@ -49,6 +50,7 @@ contract ERC721BasicToken is SupportsInterfaceWithLookup, ERC721Basic {
    */
   function balanceOf(address _owner) public view returns (uint256) {
     require(_owner != address(0));
+  
     return ownedTokensCount[_owner];
   }
 
@@ -177,8 +179,12 @@ contract ERC721BasicToken is SupportsInterfaceWithLookup, ERC721Basic {
     safeTransferFrom(_from, _to, _tokenId, "");
   }
 
-  function seeStatus(uint256 _tokenId) returns (bool){
-    return true;
+  function seeStatus(uint256 _tokenId, string eventType) public view returns (string){
+    return tokenStatus[_tokenId][eventType];
+  }
+
+  function registerNewEvent(uint256 _tokenId, string eventType, string description) public {
+    tokenStatus[_tokenId][eventType] = description;
   }
 
   /**
@@ -238,7 +244,7 @@ contract ERC721BasicToken is SupportsInterfaceWithLookup, ERC721Basic {
    * @param _to The address that will own the minted token
    * @param _tokenId uint256 ID of the token to be minted by the msg.sender
    */
-  function _mint(address _to, uint256 _tokenId) internal {
+  function _mint(address _to, uint256 _tokenId) {
     require(_to != address(0));
     addTokenTo(_to, _tokenId);
     emit Transfer(address(0), _to, _tokenId);

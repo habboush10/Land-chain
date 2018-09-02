@@ -64,6 +64,8 @@ contract ERC721Basic is ERC165 {
   function ownerOf(uint256 _tokenId) public view returns (address _owner);
   function exists(uint256 _tokenId) public view returns (bool _exists);
 
+  //  function seestatus() public view returns ( _owner);
+
   function approve(address _to, uint256 _tokenId) public;
   function getApproved(uint256 _tokenId)
     public view returns (address _operator);

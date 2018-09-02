@@ -68,6 +68,7 @@ App = {
     $('.transfer-btn').click(App.transfer);
     $('.safe-transfer-btn').click(App.safeTransfer);
     $('.total-count').click(App.seeStatus);
+    $('.regiesterNewEvent-btn').click(App.registerNewEvent);
   },
 
 
@@ -83,18 +84,6 @@ App = {
       App.msg.text('approved');
     });
   },
-
-  seeStatus: function() {
-    const key=$('#see-status').val();
-    //App.contractInstance.seeStatus(key).then(()=> {
-      App.setMessage();
-      App.msg.text('Some status text');
-  //  });
-  },
-
-
-
-
 
 
   // approve someone to deal with all of your lands;
@@ -113,7 +102,8 @@ App = {
     const id = $('#is-approved-id').val();
 
     App.contractInstance.getApproved(id).then(approved => {
-      console.log(approved);
+      App.setMessage();
+      App.msg.text(approved);
     });
 
   },
@@ -224,8 +214,56 @@ App = {
   },
 
 
+  // seeStatus: function() {
+  //   const key=$('#see-status').val();
+  //   //App.contractInstance.seeStatus(key).then(() => {
+  //     // App.setMessage();
+  //     // const x = App.contractInstance.seeStatus();
+  //     // console.log(x);
+  //     // // App.msg.text(data);
 
+  //     App.contractInstance.seeStatus().then((approved) => {
+  //       App.setMessage();
+  //       console.log(approved);
+  //       if (approved) {
+  //         App.msg.text('wlc to shabebeb land' + approved);
+  //       } else {
+  //         App.msg.text('this user is not approved for all lands');
+  
+  //       }
+  //     });
+  // // });
+  // },
 
+  seeStatus: function () {
+    const vehicleNumber =$('#see-status').val();
+    const eventType =$('#event-type-status').val();
+
+        App.contractInstance.seeStatus(vehicleNumber, eventType).then((description) => {
+          App.setMessage();
+          App.msg.text('Description:  ' + description);
+          console.log(eventType);
+        });
+  },
+
+  
+  registerNewEvent: function () {
+    const vehicleNumber = $('#vehicle-number').val();
+    const eventType = $('#event-type-register').val();
+    const eventDescription = $('#event-description').val();
+
+      App.contractInstance.registerNewEvent(vehicleNumber, eventType, eventDescription).then(() => {
+        App.setMessage();
+        App.msg.text('New Event Rejested Successfully');
+        console.log(eventType);
+      });
+      //   App.setMessage();
+      //   App.msg.text('New Event Rejested Successfully');
+      // }else{
+      //   App.setMessage();
+      //   App.msg.text('Not Successfull');
+      // }
+  },
 
   // safe Transfer Ownership of a land from someone to someone else
 
@@ -243,3 +281,5 @@ $(function () {
     App.init();
   });
 });
+
+

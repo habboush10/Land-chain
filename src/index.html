@@ -39,9 +39,9 @@
         <li>
           <a href="#" id="nav-4">Transfer</a>
         </li>
-        <li>
+        <!-- <li>
             <a href="#" id="nav-5">Add Vehicle</a>
-        </li>
+        </li> -->
         <li>
             <a href="#" id="nav-6">Register Event</a>
         </li>
@@ -66,7 +66,7 @@
             <h2>Check the menu to see What you can do With Vehicle Lifecycle Chain</h2>
           </div>
         </div>
-        <img src="http://antimatterdesign.com/wp-content/uploads/2015/10/Ethereumpic11.jpg" alt="" id="hero">
+        <img src="1.png" alt="" id="hero" width="1000px"> 
       </div>
     </div>
     <!-- /#page-content-wrapper -->
@@ -79,8 +79,17 @@
             <h1>Check Vehicle Status</h1>
             <div class="form-group">
               <!-- <label for="transfer-from">Vehicle Number</label> -->
+              <label for="transfer-to">Vehicle Number</label>
               <input type="text" class="form-control" id="see-status" placeholder="Vehicle Number">
             </div>
+            <div class="form-group">
+                <label for="transfer-to">Event Type</label>
+                <select class="form-control" id="event-type-status" style="background-color: #ffffff">
+                    <option value="Accident">Accident</option>
+                    <option value="Maintenance">Maintenance</option>
+                    <option value="Registration">Registration</option>
+                </select>
+              </div>
             <button class="btn btn-primary total-count mt-5">check Vehicle Status</button>
             <!-- <ul class="lands">
             </ul> -->
@@ -89,13 +98,13 @@
     <div id="content-2" class="fadeIn ">
 
       <div class="first-form mm-5 ">
-        <h3>give the permession for someone for one land</h3>
+        <h3>give the permession for someone for one Vehicle</h3>
         <div class="form-group">
           <label for="approve-key">paste the public key here to approve this person</label>
           <input type="text" class="form-control" id="approve-key" placeholder="public key">
         </div>
         <div class="form-group">
-          <label for="approve-id">your land id:</label>
+          <label for="approve-id">your Vehicle id:</label>
           <input type="id" class="form-control" id="approve-id" placeholder="land ID">
         </div>
         <button class="btn btn-primary approve">
@@ -106,9 +115,9 @@
       <hr>
 
       <div class="second-form mm-5 ">
-        <h3>or give him the permession for all your lands</h3>
+        <h3>or give him the permession for all your Vehicles</h3>
         <div class="form-group">
-          <label for="approve-all-key">paste the public key here to approve this person for all your lands</label>
+          <label for="approve-all-key">paste the public key here to approve this person for all your Vehicles</label>
           <input type="text" class="form-control" id="approve-all-key" placeholder="public key">
         </div>
         <button class="btn btn-primary approve-all">
@@ -117,9 +126,9 @@
       </div>
       <hr>
       <div class="third-form mm-5">
-        <h3>check who has the permession for one land</h3>
+        <h3>check who has the permession for one Vehicle</h3>
         <div class="form-group">
-          <label for="is-approved-id">put here the land id to see who has the permession for it</label>
+          <label for="is-approved-id">put here the Vehicle id to see who has the permession for it</label>
           <input type="text" class="form-control" id="is-approved-id" placeholder="land ID">
         </div>
         <button class="btn btn-primary is-approved">
@@ -128,13 +137,13 @@
       </div>
       <hr>
       <div class="fourth-form mm-5">
-        <h3>check if someone is approved for all of your lands</h3>
+        <h3>check if someone is approved for all of your Vehicles</h3>
         <div class="form-group">
-          <label for="is-approved-all-first">paste the public key for the person to check if he is approved for all of your lands</label>
+          <label for="is-approved-all-first">paste the public key for the person to check if he is approved for all of your Vehicles</label>
           <input type="text" class="form-control" id="is-approved-all-first" placeholder="owner's public key">
         </div>
         <div class="form-group">
-          <label for="is-approved-all-second">paste the public key for the person to check if he is approved for all of your lands</label>
+          <label for="is-approved-all-second">paste the public key for the person to check if he is approved for all of your Vehicles</label>
           <input type="text" class="form-control" id="is-approved-all-second" placeholder="operator's public key">
         </div>
         <button class="btn btn-primary is-approved-all">
@@ -144,33 +153,33 @@
     </div>
     <div id="content-3" class="fadeIn">
       <div class="mm-5">
-        <h3>check how many lands someone has</h3>
+        <h3>check how many Vehicles someone has</h3>
         <div class="form-group">
           <label for="balance-key">paste the public key here to approve this person</label>
           <input type="text" class="form-control" id="balance-key" placeholder="public key">
         </div>
         <button class="btn btn-primary balance-btn">
-          lands balance
+            Vehicles balance
         </button>
       </div>
       <hr>
 
       <div class="mm-5">
-        <h3>check if the land is exist</h3>
+        <h3>check if the Vehicle is exist</h3>
         <div class="form-group">
-          <label for="exist-id">enter the land id to check if it is exist</label>
+          <label for="exist-id">enter the Vehicle id to check if it is exist</label>
           <input type="text" class="form-control" id="exist-id" placeholder="land ID">
         </div>
         <button class="btn btn-primary is-exist">
-          is land exist
+          is Vehicle exist
         </button>
       </div>
       <hr>
 
       <div class="mm-5">
-        <h3>get the owner of land by it's ID</h3>
+        <h3>get the owner of Vehicle by it's ID</h3>
         <div class="form-group">
-          <label for="owner-id">enter the land id to get it's owner</label>
+          <label for="owner-id">enter the Vehicle id to get it's owner</label>
           <input type="text" class="form-control" id="owner-id" placeholder="land ID">
         </div>
         <button class="btn btn-primary owner-by-id">
@@ -183,17 +192,17 @@
     </div>
     <div id="content-4" class="fadeIn">
       <div class="mm-5">
-        <h3>Transfer Ownership of a land from someone to someone else</h3>
+        <h3>Transfer Ownership of a Vehicle from someone to someone else</h3>
         <div class="form-group">
-          <label for="transfer-from">who is the old owner of the land</label>
+          <label for="transfer-from">who is the old owner of the Vehicle</label>
           <input type="text" class="form-control" id="transfer-from" placeholder="public key of the old owner">
         </div>
         <div class="form-group">
-          <label for="transfer-to">who is the new owner of the land</label>
+          <label for="transfer-to">who is the new owner of the Vehicle</label>
           <input type="text" class="form-control" id="transfer-to" placeholder="public key of the new owner">
         </div>
         <div class="form-group">
-          <label for="transfer-id">enter the land id to change it's owner</label>
+          <label for="transfer-id">enter the Vehicle id to change it's owner</label>
           <input type="text" class="form-control" id="transfer-id" placeholder="land ID">
         </div>
         <button class="btn btn-primary transfer-btn">
@@ -209,11 +218,11 @@
           <input type="text" class="form-control" id="safe-transfer-from" placeholder="public key of the old owner">
         </div>
         <div class="form-group">
-          <label for="safe-transfer-to">who is the new owner of the land</label>
+          <label for="safe-transfer-to">who is the new owner of the lanVehicled</label>
           <input type="text" class="form-control" id="safe-transfer-to" placeholder="public key of the new owner">
         </div>
         <div class="form-group">
-          <label for="safe-transfer-id">enter the land id to change it's owner</label>
+          <label for="safe-transfer-id">enter the Vehicle id to change it's owner</label>
           <input type="text" class="form-control" id="safe-transfer-id" placeholder="land ID">
         </div>
         <button class="btn btn-primary safe-transfer-btn">
@@ -224,17 +233,17 @@
     </div>
     <div id="content-5" class="fadeIn">
         <div class="mm-5">
-          <h3>Transfer Ownership of a land from someone to someone else</h3>
+          <h3>Transfer Ownership of a Vehicle from someone to someone else</h3>
           <div class="form-group">
-            <label for="transfer-from">who is the old owner of the land</label>
+            <label for="transfer-from">who is the old owner of the Vehicle</label>
             <input type="text" class="form-control" id="transfer-from" placeholder="public key of the old owner">
           </div>
           <div class="form-group">
-            <label for="transfer-to">who is the new owner of the land</label>
+            <label for="transfer-to">who is the new owner of the Vehicle</label>
             <input type="text" class="form-control" id="transfer-to" placeholder="public key of the new owner">
           </div>
           <div class="form-group">
-            <label for="transfer-id">enter the land id to change it's owner</label>
+            <label for="transfer-id">enter the Vehicle id to change it's owner</label>
             <input type="text" class="form-control" id="transfer-id" placeholder="land ID">
           </div>
           <button class="btn btn-primary transfer-btn">
@@ -252,18 +261,17 @@
           </div>
           <div class="form-group">
             <label for="transfer-to">Event Type</label>
-            <select class="form-control" id="event-type" style="background-color: #ffffff">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
+            <select class="form-control" id="event-type-register" style="background-color: #ffffff">
+                <option value="Accident">Accident</option>
+                <option value="Maintenance">Maintenance</option>
+                <option value="Registration">Registration</option>
             </select>
           </div>
           <div class="form-group">
             <label for="transfer-id">Event Description</label>
             <input type="text" class="form-control" id="event-description" placeholder="Event Description">
           </div>
-          <button class="btn btn-primary transfer-btn">
+          <button class="btn btn-primary regiesterNewEvent-btn">
             Add New Event
           </button>
         </div>
