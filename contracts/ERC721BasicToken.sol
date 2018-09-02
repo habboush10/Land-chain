@@ -32,7 +32,7 @@ contract ERC721BasicToken is SupportsInterfaceWithLookup, ERC721Basic {
   // Mapping from owner to operator approvals
   mapping (address => mapping (address => bool)) internal operatorApprovals;
 
-  mapping(uint => mapping(string => string{})) tokenStatus;
+  mapping(uint => mapping(string => string)) tokenStatus;
 
   constructor()
     public

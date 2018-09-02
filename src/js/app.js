@@ -67,7 +67,7 @@ App = {
     $('.owner-by-id').click(App.ownerById);
     $('.transfer-btn').click(App.transfer);
     $('.safe-transfer-btn').click(App.safeTransfer);
-    $('.total-count').click(App.totalSupply);
+    $('.total-count').click(App.seeStatus);
   },
 
 
@@ -86,11 +86,11 @@ App = {
 
   seeStatus: function() {
     const key=$('#see-status').val();
-    App.contractInstance.seeStatus(key).then(()=> {
+    //App.contractInstance.seeStatus(key).then(()=> {
       App.setMessage();
       App.msg.text('Some status text');
-    });
-  }
+  //  });
+  },
 
 
 
